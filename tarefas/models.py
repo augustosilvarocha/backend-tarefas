@@ -18,6 +18,8 @@ class Tarefa(models.Model):
     status = models.CharField(verbose_name="Status", choices=STATUS_CHOICES, default='nao_iniciado')
     prazo = models.DateTimeField(verbose_name="Prazo")
     prioridade = models.CharField(verbose_name="Prioridade", choices=PRIORIDADE_CHOICES, max_length=20, default='media')
+    observacao = models.TextField(blank=True, null=True)
+
     
     def __str__(self):
         return self.nome
